@@ -1,0 +1,24 @@
+# Geheime Zugangsdaten - NIEMALS mitspeichern
+.env
+.env.local
+.env.*.local
+
+# Node/Next.js (sobald das app/-Projekt existiert)
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Editor/System
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Lokale Claude-Code-Einstellungen (persönlich, nicht projektweit)
+.claude/settings.local.json
+
+# Logs
+*.log
+npm-debug.log*
