@@ -142,6 +142,21 @@ Nutzer hat OK gegeben, mit dem Chat-/Gedächtniskern zu beginnen. Karte "Supabas
 
 ---
 
+## 2026-07-01 – Mit GitHub verbunden
+
+**Was gemacht:**
+- Lokalen Branch von `master` auf `main` umbenannt (GitHub-Konvention)
+- Remote `origin` auf `https://github.com/ai-companion1-sudo/ai-companion.git` gesetzt
+- Mit Nutzer-Bestätigung: Force-Push durchgeführt, alter Beispiel-Code auf GitHub ersetzt durch unseren Projektstand
+- Git Credential Manager (bereits systemweit vorhanden) hat die Anmeldung übernommen, kein Passwort/Token nötig
+
+**Setup ist jetzt komplett:** lokales Projekt + GitHub-Repo sind synchron.
+
+**Als Nächstes:**
+- Erster Chat-Prototyp: einfache Chat-Oberfläche + Verbindung zum KI-Modell über einen austauschbaren Adapter
+
+---
+
 ## 2026-07-01 – Produktvision erweitert: Mehrere Companions (wie Tinder)
 
 **Was entschieden:**

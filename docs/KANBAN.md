@@ -13,7 +13,6 @@ Wird bei jedem Arbeitsschritt aktualisiert. Reihenfolge innerhalb einer Spalte =
 - Bezahlung
 
 ## To Do (als Nächstes dran)
-- Lokales Repo mit `ai-companion1-sudo/ai-companion` auf GitHub verbinden (ersetzt Beispiel-Inhalt)
 - Erster Chat-Prototyp: einfache Chat-Oberfläche + Verbindung zum KI-Modell über Adapter
 - Gedächtnis-System: Grundstruktur in Supabase (pgvector) für "ein Nutzer + ein Companion = ein Gedächtnis"
 
@@ -32,3 +31,4 @@ _(aktuell nichts – wartet auf OK für den nächsten Schritt)_
 - Supabase-Schlüssel sicher in `app/.env.local` eingetragen
 - Node.js auf Version 24 LTS aktualisiert
 - Next.js-Projekt aufgesetzt (TypeScript, App Router, Tailwind), Dev-Server getestet
+- Mit GitHub verbunden (ai-companion1-sudo/ai-companion), Beispiel-Code ersetzt
