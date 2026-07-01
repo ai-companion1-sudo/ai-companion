@@ -13,15 +13,12 @@ Wird bei jedem Arbeitsschritt aktualisiert. Reihenfolge innerhalb einer Spalte =
 - Bezahlung
 
 ## To Do (als Nächstes dran)
-- Git-Repository initialisieren (.gitignore für .env)
 - Lokales Repo mit `ai-companion1-sudo/ai-companion` auf GitHub verbinden (ersetzt Beispiel-Inhalt)
-- Supabase-Projekt anlegen (EU-Region, Frankfurt)
-- Next.js-Projekt in `app/` aufsetzen (TypeScript)
 - Erster Chat-Prototyp: einfache Chat-Oberfläche + Verbindung zum KI-Modell über Adapter
 - Gedächtnis-System: Grundstruktur in Supabase (pgvector) für "ein Nutzer + ein Companion = ein Gedächtnis"
 
 ## In Progress (gerade in Arbeit)
-- Projekt-Setup (Ordnerstruktur, Projekttagebuch, Kanban-Board, README, Git)
+_(aktuell nichts – wartet auf OK für den nächsten Schritt)_
 
 ## Done (fertig)
 - Ordnerstruktur angelegt (docs/, backlog/, app/)
@@ -30,3 +27,8 @@ Wird bei jedem Arbeitsschritt aktualisiert. Reihenfolge innerhalb einer Spalte =
 - Proton-Mail-Konto angelegt (ai-companion1@proton.me)
 - GitHub-Konto angelegt und bestätigt
 - README.md geschrieben
+- Git-Repository lokal initialisiert, .gitignore erstellt, erster Commit
+- Supabase-Konto + Projekt angelegt (EU-Region Frankfurt)
+- Supabase-Schlüssel sicher in `app/.env.local` eingetragen
+- Node.js auf Version 24 LTS aktualisiert
+- Next.js-Projekt aufgesetzt (TypeScript, App Router, Tailwind), Dev-Server getestet

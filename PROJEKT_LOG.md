@@ -76,6 +76,72 @@ Bevor wir mit Programmieren anfangen, brauchen wir eine saubere Grundstruktur un
 
 ---
 
+## 2026-07-01 – Git-Repository lokal eingerichtet, erster Commit
+
+**Was gemacht:**
+- `git init` im Projektordner ausgeführt (lokales Repository, noch NICHT mit GitHub verbunden)
+- `.gitignore` erstellt: schützt u.a. `.env`, `node_modules/`, Build-Ordner und lokale Claude-Code-Einstellungen (`.claude/settings.local.json`) davor, jemals mitgespeichert zu werden
+- Git-Identität lokal (nur für dieses Projekt) gesetzt: Name `ai-companion1`, Mail `ai-companion1@proton.me`
+- Ersten Commit erstellt mit allen bisherigen Setup-Dateien (README, PROJEKT_LOG, Kanban, Backlog, .gitignore)
+
+**Warum:**
+Git speichert ab jetzt jede Änderung nachvollziehbar. Wichtig: Es wurde noch NICHTS zu GitHub hochgeladen – das ist ein bewusst separater, späterer Schritt, bei dem wir das lokale Repo mit `ai-companion1-sudo/ai-companion` verbinden.
+
+**Setup abgeschlossen.** Alle 5 geplanten Setup-Schritte (Ordnerstruktur, Projekttagebuch, Kanban-Board, README, Git) sind erledigt.
+
+**Als Nächstes (wartet auf Nutzer-OK):**
+- Erster inhaltlicher Schritt für den Chat-Prototyp (siehe Kanban "To Do")
+
+---
+
+## 2026-07-01 – Start Supabase-Setup
+
+**Was gemacht:**
+Nutzer hat OK gegeben, mit dem Chat-/Gedächtniskern zu beginnen. Karte "Supabase-Projekt anlegen" von "To Do" nach "In Progress" verschoben. Nutzer wird jetzt Schritt für Schritt durch die Supabase-Kontoerstellung geführt (Konto legt der Nutzer selbst an, wie in den Projektregeln festgelegt).
+
+**Als Nächstes:**
+- Supabase-Konto/-Projekt anlegen lassen (EU-Region Frankfurt)
+- Schlüssel in `.env`-Datei eintragen (Anleitung dazu geben)
+
+**Update:** Supabase-Konto angelegt (`joi-platform`). Passwort NICHT dokumentiert (Sicherheitsregel, siehe oben). Nutzer hat erneut ein Passwort im Chat eingefügt (2. Mal) – Empfehlung gegeben, es zeitnah zu ändern.
+
+---
+
+## 2026-07-01 – Supabase-Schlüssel in .env.local eingetragen
+
+**Was gemacht:**
+- `app/.env.local` (echte Werte, NICHT in Git) und `app/.env.example` (leere Vorlage, darf in Git) angelegt
+- Nutzer hat Project URL, Publishable Key (= neuer Name für "anon key") und Secret Key (= neuer Name für "service_role key") selbst aus dem Supabase-Dashboard eingetragen
+- Werte wurden nur "blind" geprüft (Länge/Format, nie Klartext-Ausgabe) – mit einer Ausnahme: bei der Fehlersuche wurde die Datei versehentlich einmal per Read-Tool angezeigt, wodurch die Werte kurz im Tool-Verlauf sichtbar waren. Nutzer wurde informiert und gefragt, ob der Secret Key rotiert werden soll – Entscheidung: nein, Risiko wird als gering eingestuft (lokales Projekt, noch nicht produktiv).
+- URL enthielt zunächst fälschlich einen `/rest/v1/`-Zusatz, wurde korrigiert.
+
+**Wichtige Lektion:** Vor dem nächsten Mal grundsätzlich NIE `.env`-Dateien mit echten Secrets per Read-Tool öffnen – nur über Skripte prüfen, die lediglich Länge/Format ausgeben.
+
+**Als Nächstes:**
+- Next.js-Projekt in `app/` aufsetzen (TypeScript)
+- Lokales Repo mit `ai-companion1-sudo/ai-companion` auf GitHub verbinden
+
+---
+
+## 2026-07-01 – Next.js-Projekt aufgesetzt
+
+**Was gemacht:**
+- Node.js systemweit von 18.12 auf 24 LTS aktualisiert (via winget), da Next.js mind. Node 20.9 braucht
+- Next.js-Projekt in `app/` erstellt: TypeScript, App Router, Tailwind CSS, ESLint, `src/`-Ordnerstruktur
+- `.env.local`/`.env.example` blieben erhalten (kurz ausgelagert, nach dem Erstellen zurückgelegt)
+- `.claude/launch.json` angelegt, damit der Dev-Server künftig einfach gestartet werden kann
+- Server testweise gestartet und per Screenshot geprüft – Next.js-Standardseite lädt korrekt
+
+**Wichtiger Hinweis für zukünftige Arbeit:** Next.js Version ist 16.2.9, sehr neu. Die automatisch erstellte `app/AGENTS.md` warnt ausdrücklich, dass sich APIs/Konventionen von älterem Trainingswissen unterscheiden können – vor dem Schreiben von echtem Code sollte die lokale Doku in `app/node_modules/next/dist/docs/` geprüft werden.
+
+**Kleine Doppelung (unkritisch):** Next.js hat automatisch ein eigenes `app/README.md` und `app/.gitignore` angelegt (Next.js-Standardinhalte). Das überschneidet sich nicht mit unserem Haupt-`README.md`/`.gitignore`, beide Ebenen ergänzen sich einfach.
+
+**Als Nächstes:**
+- Lokales Repo mit `ai-companion1-sudo/ai-companion` auf GitHub verbinden (überschreibt Beispiel-Inhalt)
+- Danach: erster Chat-Prototyp (Chat-Oberfläche + KI-Adapter)
+
+---
+
 ## 2026-07-01 – Produktvision erweitert: Mehrere Companions (wie Tinder)
 
 **Was entschieden:**
